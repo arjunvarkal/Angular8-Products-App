@@ -11,6 +11,7 @@ export class ProductComponent{
     imageWidth : number = 50 ;
     showImage :boolean =true ;
     showTable:boolean =true ;
+    userInput:string = "User Text Here" ;
     products : any[] = [
         {
             _id: '5a05dacc734d1d68d42d31f3',
