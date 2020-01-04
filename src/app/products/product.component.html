@@ -7,10 +7,11 @@
     </div>
 
     <div class="panel panel-body">
-        <table class="table">
+        <table class="table" *ngIf="products && products.length ; else loading">
             <thead>
                 <tr>
-                    <th>Image</th>
+                    <th><button class="btn btn-danger" (click) = "toggleImage()">
+                        Show Image</button></th>
                     <th>Name</th>
                     <th>Code</th>
                     <th>Price</th>
@@ -19,12 +20,15 @@
 
             <tbody>
                 <tr *ngFor="let prod of products">
-                    <td><img [src]= "prod.imageUrl" [style.width.px]="imageWidth"/></td>
+                    <td><img [src]= "prod.imageUrl" [style.width.px]="imageWidth" *ngIf="showImage"/></td>
                     <td>{{prod.productName}}</td>
                     <td>{{prod.productCode}}</td>
                     <td>{{prod.price}}</td>
                 </tr>
             </tbody>
         </table>
+        <ng-template #loading>
+            <img src="../../assets/loaderImage.gif"/>
+        </ng-template>
     </div>
 </div>
