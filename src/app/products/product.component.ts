@@ -1,4 +1,5 @@
 import { Component } from '@angular/core' ;
+import {IProduct} from './product.model' ;
 
 @Component({
     selector : 'app-prod',
@@ -11,8 +12,8 @@ export class ProductComponent{
     imageWidth : number = 50 ;
     showImage :boolean =true ;
     showTable:boolean =true ;
-    userInput:string = "User Text Here" ;
-    products : any[] = [
+    userText:string = "" ;
+    products : IProduct[] = [
         {
             _id: '5a05dacc734d1d68d42d31f3',
             productId: 1,
@@ -38,5 +39,8 @@ export class ProductComponent{
     ]
     toggleImage(){
         this.showImage = !this.showImage ;
+    }
+    dataReceive(message){
+        this.title = 'Product Pages >>>> '+message ;
     }
 }

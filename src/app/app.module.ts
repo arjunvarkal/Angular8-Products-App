@@ -6,6 +6,8 @@ import { ProductComponent } from './products/product.component' ;
 import { FormsModule } from '@angular/forms' ;
 import { MyUpperCasePipe } from './products/myupper.pipe' ;
 import { MyDiscountPipe } from './products/discount.pipe' ;
+import { MySearchPipe } from './products/search.pipe';
+import { StarComponent } from './shared/star.component' ;
 
 @NgModule({
 
@@ -20,7 +22,9 @@ import { MyDiscountPipe } from './products/discount.pipe' ;
         HomeComponent,
         ProductComponent,
         MyUpperCasePipe,
-        MyDiscountPipe
+        MyDiscountPipe,
+        MySearchPipe,
+        StarComponent
     ],
     //Only Main Component goes here
     bootstrap : [AppComponent],
