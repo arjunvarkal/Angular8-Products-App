@@ -9,12 +9,17 @@ import { MyDiscountPipe } from './products/discount.pipe' ;
 import { MySearchPipe } from './products/search.pipe';
 import { StarComponent } from './shared/star.component' ;
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { StarRating } from './shared/star.rating';
+
 @NgModule({
 
     //All modules declare here
     imports :[
         BrowserModule,
-        FormsModule
+        FormsModule,
+        NgbModule
     ],
     //All Components,Directives and Pipes will be declare here
     declarations :[
@@ -24,7 +29,8 @@ import { StarComponent } from './shared/star.component' ;
         MyUpperCasePipe,
         MyDiscountPipe,
         MySearchPipe,
-        StarComponent
+        StarComponent,
+        StarRating
     ],
     //Only Main Component goes here
     bootstrap : [AppComponent],

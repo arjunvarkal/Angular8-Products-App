@@ -42,8 +42,12 @@
                     <td>{{prod.productCode | myUpperCase : 'lower'}}</td>
                     <td>{{prod.price | Discount:1 | currency : "GBP"}}</td>
                     <td>
-                        <app-star [rating]="prod.starRating"
+                       <!-- <app-star [rating]="prod.starRating"
                         (ratingClicked)="dataReceive($event)"></app-star>
+
+                        <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                        -->
+                        <app-star-rating [rating]="prod.starRating"></app-star-rating>
                     </td>
                 </tr>
             </tbody>
