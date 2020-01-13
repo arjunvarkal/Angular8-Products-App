@@ -38,16 +38,18 @@
             <tbody>
                 <tr *ngFor="let prod of products | SearchPipe : userText">
                     <td><img [src]= "prod.imageUrl" [style.width.px]="imageWidth" *ngIf="showImage"/></td>
-                    <td>{{prod.productName | myUpperCase :'upper'}}</td>
+                    <td><a [routerLink]="['/products',prod.productId]">
+                        {{prod.productName | myUpperCase :'upper'}}
+                    </a></td>
                     <td>{{prod.productCode | myUpperCase : 'lower'}}</td>
                     <td>{{prod.price | Discount:1 | currency : "GBP"}}</td>
                     <td>
-                       <!-- <app-star [rating]="prod.starRating"
+                       <app-star [rating]="prod.starRating"
                         (ratingClicked)="dataReceive($event)"></app-star>
 
-                        <ngb-rating [(rate)]="currentRate"></ngb-rating>
-                        -->
-                        <app-star-rating [rating]="prod.starRating"></app-star-rating>
+                      <!--  <ngb-rating [(rate)]="currentRate"></ngb-rating>-->
+                        
+                        <!--<app-star-rating [rating]="prod.starRating"></app-star-rating>-->
                     </td>
                 </tr>
             </tbody>
@@ -57,3 +59,8 @@
         </ng-template>
     </div>
 </div>
+
+
+<!--
+    [queryParams]="{name:prod.productName,img:prod.imageUrl,details:prod.description}"
+-->

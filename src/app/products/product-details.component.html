@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Product Details Page
+    </div>
+    <div class="panel-body"  >
+        <div class="row" >
+        </div>
+        <div class="row"  >
+            <div class="jumbotron">
+                <h1>{{details[0].productName}}</h1>
+                <h2>Product Details Page for {{id}}</h2>
+                <img [src]="details[0].imageUrl"/>
+                <p>{{details[0].description}}</p>
+                
+            </div>
+            <button class="btn btn-danger" (click)="onBack()">
+                <<Back
+            </button>
+        </div>
+    </div>
+</div>
