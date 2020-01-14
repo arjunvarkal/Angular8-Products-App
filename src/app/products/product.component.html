@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h4> Number of Products Filter on the basis of {{userText}} is 
-                    {{(products | SearchPipe:userText).length}}
+                    <!--{{(products | SearchPipe:userText).length}}-->
                 </h4>
             </div>
         </div>
@@ -42,7 +42,7 @@
                         {{prod.productName | myUpperCase :'upper'}}
                     </a></td>
                     <td>{{prod.productCode | myUpperCase : 'lower'}}</td>
-                    <td>{{prod.price | Discount:1 | currency : "GBP"}}</td>
+                    <td appColor>{{prod.price | Discount:1 | currency : "GBP"}}</td>
                     <td>
                        <app-star [rating]="prod.starRating"
                         (ratingClicked)="dataReceive($event)"></app-star>

@@ -11,6 +11,7 @@ export class ProductDetailsComponent implements OnInit {
 
     id : number ;
     details : IProduct[] ;
+    
 
   constructor(private route : ActivatedRoute,private productService : ProductService
     ,private router:Router) { }
